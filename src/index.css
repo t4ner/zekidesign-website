@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+  font-family: "Montserrat";
+}
+.clip {
+  clip-path: polygon(
+    50% 0%,
+    100% 0,
+    100% 35%,
+    100% 100%,
+    80% 90%,
+    50% 100%,
+    22% 86%,
+    0 100%,
+    0% 35%,
+    0 0
+  );
+}
