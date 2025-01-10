@@ -3,7 +3,7 @@ import React from "react";
 const Datenschut = () => {
   return (
     <div className="container px-4 py-8 mx-auto mt-20">
-      <h1 className="text-5xl font-semibold text-[#E40128] mb-6">
+      <h1 className="text-5xl font-semibold text-[#E40128] mb-24">
         Datenschutzerklärung
       </h1>
 
