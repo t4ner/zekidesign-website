@@ -4,10 +4,10 @@ import Logo from "/logo/logo2.png"; // Logo'yu assets klasörüne eklemelisiniz
 
 const Footer = () => {
   return (
-    <footer className="py-8 mt-32 mb-5 border-y border-[#06234B] mx-10 ">
+    <footer className="py-8 mt-32 mb-5 border-t border-[#06234B] mx-4 md:mx-10">
       <div className="container px-4 mx-auto">
-        {/* İletişim Butonları */}
-        <div className="flex justify-center mb-16 gap-44">
+        {/* Contact Buttons */}
+        <div className="flex flex-col justify-center gap-8 mb-16 md:flex-row md:gap-16">
           <a href="tel:+4901733123222" className="flex items-center gap-4">
             <div className="p-2 bg-red-600 rounded-full">
               <svg
@@ -72,7 +72,7 @@ const Footer = () => {
           </a>
         </div>
 
-        {/* İletişim Başlığı */}
+        {/* Contact Title */}
         <div className="mb-10 text-center">
           <h3 className="font-medium text-gray-600">
             Haben Sie Fragen, benötigen Beratung oder ein Angebot rund um
@@ -83,12 +83,12 @@ const Footer = () => {
           </h2>
         </div>
 
-        {/* Alt Footer */}
-        <div className="flex items-end justify-between pt-8">
-          <div>
+        {/* Bottom Footer */}
+        <div className="flex flex-col items-start justify-between pt-8 md:flex-row">
+          <div className="mb-4 md:mb-0">
             <img src={Logo} alt="Zekidesign Logo" className="h-12" />
           </div>
-          <div className="flex gap-6 text-sm font-medium text-zinc-500">
+          <div className="flex flex-col gap-6 text-sm font-medium md:flex-row text-zinc-500">
             <Link to="/">Home</Link>
             <Link to="/kontakt">Kontakt</Link>
             <Link to="/impressum">Impressum</Link>

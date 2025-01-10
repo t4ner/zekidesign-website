@@ -92,7 +92,7 @@ const Navbar = () => {
                   >
                     <div className="container h-full px-4 mx-auto mt-20">
                       <h2 className="py-12 text-3xl font-bold text-center text-black">
-                     Unsere Dienstleistungen
+                        Unsere Dienstleistungen
                       </h2>
                       <div className="grid grid-cols-2 gap-20 px-4 mx-auto mt-8 md:grid-cols-3 lg:grid-cols-5 max-w-7xl">
                         {products.map((product, idx) => (

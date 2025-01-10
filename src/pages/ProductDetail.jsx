@@ -8,6 +8,7 @@ const ProductDetail = () => {
     (p) => p.title.toLowerCase().replace(/\s+/g, "-") === productId
   );
   const [selectedImage, setSelectedImage] = useState(0);
+  const [isNavOpen, setIsNavOpen] = useState(false);
 
   if (!product) {
     return <div>Product not found</div>;
@@ -15,10 +16,14 @@ const ProductDetail = () => {
 
   return (
     <div className="container px-4 mx-auto mt-20">
-      <div className="flex items-start gap-12">
+      <div className="flex flex-col items-start gap-12 md:flex-row">
         {/* Left Side Navigation */}
-        <div className="sticky w-1/4 top-24">
-          <nav className="p-6 bg-white rounded-2xl shadow-[0_4px_12px_rgba(0,0,0,0.2)]">
+        <div
+          className={`sticky top-24 w-full md:w-1/4 ${
+            isNavOpen ? "block" : "hidden md:block"
+          }`}
+        >
+          <nav className="p-6 bg-white shadow-lg rounded-2xl">
             {products.map((p) => (
               <a
                 key={p.id}
@@ -36,10 +41,18 @@ const ProductDetail = () => {
           </nav>
         </div>
 
+        {/* Button to toggle navigation on mobile */}
+        <button
+          className="md:hidden p-2 bg-[#E40128] text-white rounded-lg"
+          onClick={() => setIsNavOpen(!isNavOpen)}
+        >
+          {isNavOpen ? "Close Menu" : "Open Menu"}
+        </button>
+
         {/* Main Content */}
-        <div className="w-3/4 p-8 bg-white rounded-2xl shadow-[0_4px_12px_rgba(0,0,0,0.2)]">
+        <div className="w-full p-8 bg-white shadow-lg md:w-3/4 rounded-2xl">
           {/* Header Section */}
-          <div className="flex items-center gap-6 pb-8 border-b border-gray-100">
+          <div className="flex flex-col items-center gap-6 pb-8 border-b border-gray-100 md:flex-row">
             <div className="">
               <img
                 src={product.img}
@@ -55,7 +68,7 @@ const ProductDetail = () => {
                     <div className="absolute -inset-[3px] bg-gradient-to-r from-gray-100 via-gray-200 to-gray-100 rounded-xl blur-md opacity-75 transition-all duration-500" />
 
                     {/* Card content */}
-                    <div className="relative px-5 py-3 bg-white rounded-lg shadow-[0_8px_16px_-6px_rgba(0,0,0,0.1)] transition-all duration-300 group-hover:shadow-[0_10px_20px_-8px_rgba(0,0,0,0.15)]">
+                    <div className="relative px-5 py-3 transition-all duration-300 bg-white rounded-lg shadow-md group-hover:shadow-lg">
                       <span className="font-medium text-[#06234B]">{item}</span>
                     </div>
                   </div>
@@ -77,7 +90,7 @@ const ProductDetail = () => {
                     <img
                       src={product.detailImages[0] || product.img}
                       alt={`${product.title} - Image 1`}
-                      className="object-contain w-full h-full"
+                      className="object-cover w-full h-full"
                     />
                   </div>
                 </div>
