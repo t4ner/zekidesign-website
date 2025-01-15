@@ -8,3 +8,13 @@
 body {
   font-family: "Montserrat", serif;
 }
+
+.loading {
+  @apply flex items-center justify-center w-full h-full;
+  min-height: 200px;
+}
+
+.loading::after {
+  content: "";
+  @apply w-8 h-8 border-4 border-[#E40128] border-t-transparent rounded-full animate-spin;
+}

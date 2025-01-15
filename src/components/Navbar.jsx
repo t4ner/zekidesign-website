@@ -1,8 +1,51 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, {
+  useState,
+  useRef,
+  useEffect,
+  useCallback,
+  memo,
+  useMemo,
+  lazy,
+  Suspense,
+} from "react";
 import { Link } from "react-router-dom";
 import logo from "/logo/logo.webp";
 import { IoMenu, IoClose } from "react-icons/io5";
 import products from "../data.js";
+
+// MenuLink bileşenini ayırıyoruz
+const MenuLink = memo(({ to, children, onClick }) => (
+  <Link
+    to={to}
+    className="text-sm font-medium text-[#06234B] hover:text-[#E40128] transition-colors duration-200"
+    onClick={onClick}
+    role="menuitem"
+  >
+    {children}
+  </Link>
+));
+
+// ProductLink bileşenini ayırıyoruz
+const ProductLink = memo(({ product, onClick }) => (
+  <Link
+    to={`/${product.title.toLowerCase().replace(/\s+/g, "-")}`}
+    className="flex items-center gap-4 cursor-pointer text-black hover:text-[#E40128] transition-colors duration-200"
+    onClick={onClick}
+  >
+    <div className="w-9 h-9 bg-[#E40128] rounded-lg flex items-center justify-center">
+      <img
+        src={product.img}
+        alt={product.title}
+        className="object-contain w-7 h-7"
+        loading="lazy"
+      />
+    </div>
+    <span className="text-sm font-medium">{product.title}</span>
+  </Link>
+));
+
+// Mega menu için lazy loading
+const MegaMenu = lazy(() => import("./MegaMenu"));
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,22 +54,22 @@ const Navbar = () => {
   const megaMenuRef = useRef(null);
   const menuItemRef = useRef(null);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (showMegaMenu) {
-        setShowMegaMenu(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+  const handleScroll = useCallback(() => {
+    if (showMegaMenu) {
+      setShowMegaMenu(false);
+    }
   }, [showMegaMenu]);
 
-  const handleMouseEnter = () => {
-    setShowMegaMenu(true);
-  };
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [handleScroll]);
 
-  const handleMouseLeave = (e) => {
+  const handleMouseEnter = useCallback(() => {
+    setShowMegaMenu(true);
+  }, []);
+
+  const handleMouseLeave = useCallback((e) => {
     const megaMenu = megaMenuRef.current;
     const menuItem = menuItemRef.current;
 
@@ -36,14 +79,37 @@ const Navbar = () => {
     ) {
       setShowMegaMenu(false);
     }
-  };
+  }, []);
 
-  const menuItems = [
-    { title: "Home", link: "/" },
+  const handleMobileMenuClose = useCallback(() => {
+    setIsOpen(false);
+  }, []);
 
-    { title: "Dienstleistungen", link: "/dienstleistungen", hasMegaMenu: true },
-    { title: "Kontakt", link: "/kontakt" },
-  ];
+  // Memoize edilmiş menuItems
+  const menuItems = useMemo(
+    () => [
+      { title: "Home", link: "/" },
+      {
+        title: "Dienstleistungen",
+        link: "/dienstleistungen",
+        hasMegaMenu: true,
+      },
+      { title: "Kontakt", link: "/kontakt" },
+    ],
+    []
+  );
+
+  // Event handler'ları useCallback ile optimize edelim
+  const handleMobileMenuClick = useCallback(
+    (item) => {
+      if (item.hasMegaMenu) {
+        setShowMobileProducts(!showMobileProducts);
+      } else {
+        setIsOpen(false);
+      }
+    },
+    [showMobileProducts]
+  );
 
   return (
     <nav className="z-50">
@@ -78,54 +144,17 @@ const Navbar = () => {
                 )}
 
                 {/* Mega Menu */}
-                {item.hasMegaMenu && (
-                  <div
-                    ref={megaMenuRef}
-                    className={`fixed top-0 left-0  w-full h-screen z-[60] bg-white transform transition-transform duration-500 ease-in-out ${
-                      showMegaMenu
-                        ? "translate-y-20 pointer-events-auto"
-                        : "-translate-y-full pointer-events-none"
-                    }`}
-                    onMouseEnter={handleMouseEnter}
-                    onMouseLeave={handleMouseLeave}
+                {item.hasMegaMenu && showMegaMenu && (
+                  <Suspense
+                    fallback={<div className="loading">Loading...</div>}
                   >
-                    <div className="container h-full px-4 mx-auto mt-20">
-                      <h2 className="py-12 text-3xl font-bold text-center text-black">
-                        Unsere Dienstleistungen
-                      </h2>
-                      <div className="grid grid-cols-2 gap-20 px-4 mx-auto mt-8 md:grid-cols-3 lg:grid-cols-5 max-w-7xl">
-                        {products.map((product, idx) => (
-                          <Link
-                            key={idx}
-                            to={`/${product.title
-                              .toLowerCase()
-                              .replace(/\s+/g, "-")}`}
-                            className="text-center transition-all duration-300 ease-in cursor-pointer hover:scale-110"
-                            onClick={() => setShowMegaMenu(false)}
-                            style={{
-                              transitionDelay: showMegaMenu
-                                ? `${idx * 100}ms`
-                                : "0ms",
-                              transitionProperty: showMegaMenu
-                                ? "all"
-                                : "transform",
-                            }}
-                          >
-                            <div className="aspect-square relative bg-[#E40128] rounded-lg flex flex-col items-center justify-center transition-shadow duration-800 hover:shadow-2xl">
-                              <img
-                                src={product.img}
-                                alt={product.title}
-                                className="object-contain w-20 h-20"
-                              />
-                              <h3 className="absolute text-lg font-medium text-white bottom-4">
-                                {product.title}
-                              </h3>
-                            </div>
-                          </Link>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
+                    <MegaMenu
+                      products={products}
+                      onClose={() => setShowMegaMenu(false)}
+                      ref={megaMenuRef}
+                      showMegaMenu={showMegaMenu}
+                    />
+                  </Suspense>
                 )}
               </div>
             ))}
@@ -135,13 +164,12 @@ const Navbar = () => {
           <div className="lg:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-[#E40128] "
+              className="lg:hidden text-[#E40128]"
+              aria-expanded={isOpen}
+              aria-controls="mobile-menu"
+              aria-label={isOpen ? "Menüyü kapat" : "Menüyü aç"}
             >
-              {isOpen ? (
-                <IoClose size={1} color="black" />
-              ) : (
-                <IoMenu size={28} />
-              )}
+              {isOpen ? <IoClose size={24} /> : <IoMenu size={28} />}
             </button>
           </div>
         </div>
@@ -171,13 +199,7 @@ const Navbar = () => {
                   <div key={index}>
                     <div
                       className="flex items-center justify-between cursor-pointer"
-                      onClick={() => {
-                        if (item.hasMegaMenu) {
-                          setShowMobileProducts(!showMobileProducts);
-                        } else {
-                          setIsOpen(false);
-                        }
-                      }}
+                      onClick={() => handleMobileMenuClick(item)}
                     >
                       {item.hasMegaMenu ? (
                         <span className="hover:text-[#E40128] text-sm font-medium transition-colors duration-200">
@@ -251,4 +273,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default memo(Navbar);

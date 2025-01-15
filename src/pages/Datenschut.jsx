@@ -1,6 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 const Datenschut = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="container px-4 py-8 mx-auto mb-10 md:mb-20 md:mt-16">
       <h1 className="text-xl md:text-4xl font-semibold text-[#E40128] mb-8 md:mb-20">
@@ -99,7 +103,10 @@ const Datenschut = () => {
         Telefon: 0173-31 23 222
         <br />
         E-Mail:{" "}
-        <a href="mailto:info@zekimedia.de" className="text-xs text-blue-500 md:text-base">
+        <a
+          href="mailto:info@zekimedia.de"
+          className="text-xs text-blue-500 md:text-base"
+        >
           info@zekimedia.de
         </a>
       </div>
@@ -108,8 +115,7 @@ const Datenschut = () => {
         3. Datenerfassung auf unserer Website
       </h2>
       <div className="my-2 text-xs text-zinc-500 md:text-base">
-        <span className=" font-semibold text-[#06234B]">Cookies:</span>{" "}
-        <br />
+        <span className=" font-semibold text-[#06234B]">Cookies:</span> <br />
         Unsere Website verwendet Cookies, um die Nutzung benutzerfreundlicher
         und effizienter zu gestalten. Cookies sind kleine Textdateien, die auf
         Ihrem Endgerät gespeichert werden.
@@ -150,9 +156,7 @@ const Datenschut = () => {
         gewährleisten.
       </div>
 
-      <h2 className="mt-6 font-semibold text-[#06234B]">
-        Server-Log-Dateien
-      </h2>
+      <h2 className="mt-6 font-semibold text-[#06234B]">Server-Log-Dateien</h2>
       <div className="text-xs text-zinc-500 md:text-base">
         Beim Besuch der Website werden automatisch folgende Daten in
         Server-Log-Dateien gespeichert:

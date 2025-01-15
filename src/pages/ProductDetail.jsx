@@ -1,55 +1,103 @@
-import React, { useState } from "react";
+import React, { useState, useMemo, useEffect, useRef } from "react";
 import { useParams } from "react-router-dom";
 import products from "../data";
 import { IoIosArrowBack } from "react-icons/io";
 
 const ProductDetail = () => {
   const { productId } = useParams();
-  const product = products.find(
-    (p) => p.title.toLowerCase().replace(/\s+/g, "-") === productId
+  const product = useMemo(
+    () =>
+      products.find(
+        (p) => p.title.toLowerCase().replace(/\s+/g, "-") === productId
+      ),
+    [productId]
   );
+
+  useEffect(() => {
+    if (product?.detailImages) {
+      product.detailImages.forEach((img) => {
+        const image = new Image();
+        image.src = img;
+      });
+    }
+  }, [product]);
+
+  const imageRef = useRef(null);
+  const [isImageVisible, setIsImageVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsImageVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (imageRef.current) {
+      observer.observe(imageRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   const [selectedImage, setSelectedImage] = useState(0);
   const [isNavOpen, setIsNavOpen] = useState(false);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   if (!product) {
     return <div>Product not found</div>;
   }
 
   return (
-    <div className="container px-4 mx-auto mt-8 mb-20 md:mb-40 sm:mt-12 md:mt-20">
+    <main
+      className="container px-4 mx-auto mt-8 mb-20 md:mb-40 sm:mt-12 md:mt-20"
+      role="main"
+    >
       <div className="flex flex-col items-start gap-6 md:gap-12 md:flex-row">
-        {/* Left Side Navigation */}
         <div
           className={`fixed inset-y-0 left-0 w-full md:w-1/4 md:static md:block transform transition-transform duration-300 ease-in-out ${
             isNavOpen ? "translate-x-0" : "-translate-x-full"
           } md:translate-x-0 z-50 bg-white`}
         >
-          <nav className="h-full p-4 bg-white shadow-lg md:h-auto md:p-6 rounded-2xl">
-            {/* Close button for mobile */}
+          <nav
+            className="h-full p-4 bg-white shadow-lg md:h-auto md:p-6 rounded-2xl"
+            aria-label="Ürün navigasyonu"
+          >
             <button
               className="flex text-sm md:text-base font-medium items-center w-full p-2 mb-4 text-[#E40128] md:hidden"
               onClick={() => setIsNavOpen(false)}
+              aria-label="Navigasyonu kapat"
             >
-         <IoIosArrowBack className="mr-2" />
-              Zurück
+              <IoIosArrowBack aria-hidden="true" className="mr-2" />
+              <span>Zurück</span>
             </button>
-            {products.map((p) => (
-              <a
-                key={p.id}
-                href={`/${p.title.toLowerCase().replace(/\s+/g, "-")}`}
-                className={`flex items-center gap-3 p-2 md:p-3 rounded-xl transition-all duration-300 mb-2 last:mb-0
-                  ${
-                    p.id === product.id
-                      ? "text-[#E40128] font-semibold"
-                      : "hover:bg-gray-100 text-[#06234B]"
-                  }`}
-                onClick={() => setIsNavOpen(false)}
-              >
-                <span className="text-sm font-medium md:text-base">
-                  {p.title}
-                </span>
-              </a>
-            ))}
+
+            <ul role="list" className="space-y-2">
+              {products.map((p) => (
+                <li key={p.id}>
+                  <a
+                    href={`/${p.title.toLowerCase().replace(/\s+/g, "-")}`}
+                    className={`flex items-center gap-3 p-2 md:p-3 rounded-xl transition-all duration-300 ${
+                      p.id === product.id
+                        ? "text-[#E40128] font-semibold"
+                        : "hover:bg-gray-100 text-[#06234B]"
+                    }`}
+                    onClick={() => setIsNavOpen(false)}
+                    aria-current={p.id === product.id ? "page" : undefined}
+                  >
+                    <span className="text-sm font-medium md:text-base">
+                      {p.title}
+                    </span>
+                  </a>
+                </li>
+              ))}
+            </ul>
           </nav>
         </div>
 
@@ -108,12 +156,19 @@ const ProductDetail = () => {
               <div className="space-y-4 sm:space-y-6">
                 <div className="relative aspect-[16/9] group">
                   <div className="absolute transition duration-300 bg-gray-200 opacity-25 -inset-1 rounded-2xl blur group-hover:opacity-100"></div>
-                  <div className="relative h-full overflow-hidden bg-gray-100 rounded-xl">
-                    <img
-                      src={product.detailImages[0] || product.img}
-                      alt={`${product.title} - Image 1`}
-                      className="object-cover w-full h-full"
-                    />
+                  <div
+                    ref={imageRef}
+                    className="relative h-full overflow-hidden bg-gray-100 rounded-xl"
+                  >
+                    {isImageVisible && (
+                      <img
+                        src={product.detailImages[0] || product.img}
+                        alt={`${product.title} - Image 1`}
+                        className="object-cover w-full h-full"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    )}
                   </div>
                 </div>
               </div>
@@ -121,7 +176,7 @@ const ProductDetail = () => {
           </div>
         </div>
       </div>
-    </div>
+    </main>
   );
 };
 

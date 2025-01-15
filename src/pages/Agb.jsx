@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 const Agb = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="container px-4 py-8 mx-auto mb-10 md:mb-20 md:mt-16">
-         <h1 className="text-xl md:text-4xl font-semibold text-[#E40128] mb-8 md:mb-20 ">
+      <h1 className="text-xl md:text-4xl font-semibold text-[#E40128] mb-8 md:mb-20 ">
         Allgemeine Geschäftsbedingungen (AGB)
       </h1>
 
