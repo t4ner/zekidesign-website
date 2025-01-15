@@ -1,7 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
-import logo from "/logo/logo2.png";
-import logo2 from "/logo/logo2.png";
+import logo from "/logo/logo.webp";
 import { IoMenu, IoClose } from "react-icons/io5";
 import products from "../data.js";
 
@@ -156,7 +155,7 @@ const Navbar = () => {
           <div className="flex flex-col h-full">
             {/* Logo ve Kapatma Butonu */}
             <div className="flex items-center justify-between p-6 border-b border-gray-800">
-              <img src={logo2} alt="Logo" className="w-40" />
+              <img src={logo} alt="Logo" className="w-40" />
               <button
                 onClick={() => setIsOpen(false)}
                 className="text-white hover:text-[#E40128] p-2"

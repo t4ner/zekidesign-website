@@ -2,13 +2,10 @@ const products = [
   {
     id: 1,
     title: "Grafikdesign",
-    img: "/productsImage/design.png",
+    img: "/productsImage/design.webp",
     description: "Logo Design, Corporate Design, Geschäftsausstattung",
     path: "/grafikdesign",
-    detailImages: [
-      "/productDetailImage/grafikdesign.png",
-     
-    ],
+    detailImages: ["/productDetailImage/grafikdesign.webp"],
     detailDescription: [
       "Logo Design",
       "Corporate Design",
@@ -24,12 +21,10 @@ const products = [
   {
     id: 2,
     title: "Printmedien",
-    img: "/productsImage/print.png",
+    img: "/productsImage/print.webp",
     description: "Flyer, Visitenkarten, Briefpapier",
     path: "/printmedien",
-    detailImages: [
-      "/productDetailImage/printmedien.png",
-    ],
+    detailImages: ["/productDetailImage/printmedien.webp"],
     detailDescription: [
       "Flyer",
       "Visitenkarten",
@@ -48,13 +43,10 @@ const products = [
   {
     id: 3,
     title: "Banner & Planen",
-    img: "/productsImage/banner.png",
+    img: "/productsImage/banner.webp",
     description: "Werbebanner, Mesh-Banner, PVC-Banner",
     path: "/banner-&-planen",
-    detailImages: [
-      "/productDetailImage/bannerplanen.png",
-      
-    ],
+    detailImages: ["/productDetailImage/bannerplanen.webp"],
     detailDescription: [
       "PVC-Planen",
       "Werbeplanen",
@@ -71,12 +63,10 @@ const products = [
   {
     id: 7,
     title: "Schilder",
-    img: "/productsImage/schilder.png",
+    img: "/productsImage/schilder.webp",
     description: "Werbeschilder, Firmenschilder, Leuchtwerbung",
     path: "/schilder",
-    detailImages: [
-      "/productDetailImage/schilder.png",
-    ],
+    detailImages: ["/productDetailImage/schilder.webp"],
     detailDescription: [
       "Firmenschilder",
       "Bauschilder",
@@ -92,13 +82,10 @@ const products = [
   {
     id: 5,
     title: "Fensterwerbung",
-    img: "/productsImage/fenster.png",
+    img: "/productsImage/fenster.webp",
     description: "Schaufensterbeschriftung, Glasdekor",
     path: "/fensterwerbung",
-    detailImages: [
-      "/productDetailImage/fenster.png",
-
-    ],
+    detailImages: ["/productDetailImage/fenster.webp"],
     detailDescription: [
       "Fensterbeschriftung",
       "Fassadenbeschriftung",
@@ -112,12 +99,10 @@ const products = [
   {
     id: 4,
     title: "KFZ-Werbung",
-    img: "/productsImage/kfz.png",
+    img: "/productsImage/kfz.webp",
     description: "Fahrzeugbeschriftung, KFZ-Folierung",
     path: "/kfz-werbung",
-    detailImages: [
-      "/productDetailImage/kfz.png",
-    ],
+    detailImages: ["/productDetailImage/kfz.webp"],
     detailDescription: [
       "Transporter-Beschriftung",
       "PKW-Beschriftung",
@@ -132,13 +117,11 @@ const products = [
   {
     id: 6,
     title: "LED-Werbung",
-    img: "/productsImage/led.png",
+    img: "/productsImage/led.webp",
     description:
       "3D-Buchstaben, Leuchkasten, Neon Schriftzug, LED-Textilspannrahmen",
     path: "/led-werbung",
-    detailImages: [
-      "/productDetailImage/led.png",
-    ],
+    detailImages: ["/productDetailImage/led.webp"],
     detailDescription: [
       "3D-Buchstaben",
       "Leuchtkasten",
@@ -154,13 +137,10 @@ const products = [
   {
     id: 8,
     title: "Textildruck",
-    img: "/productsImage/textilien.png",
+    img: "/productsImage/textilien.webp",
     description: "T-Shirts, Poloshirts, Arbeitsbekleidung",
     path: "/textildruck",
-    detailImages: [
-      "/productDetailImage/textildruck.png",
-
-    ],
+    detailImages: ["/productDetailImage/textildruck.webp"],
     detailDescription: [
       "T-Shirts",
       "Poloshirts",
@@ -178,12 +158,10 @@ const products = [
   {
     id: 9,
     title: "Werbeartikel",
-    img: "/productsImage/werbeartikel.png",
+    img: "/productsImage/werbeartikel.webp",
     description: "Kugelschreiber, USB-Sticks, Tassen",
     path: "/werbeartikel",
-    detailImages: [
-      "/productDetailImage/webartikel.png",
-    ],
+    detailImages: ["/productDetailImage/webartikel.webp"],
     detailDescription: [
       "Kugelschreiber",
       "Tassen & Gläser",
@@ -201,13 +179,10 @@ const products = [
   {
     id: 10,
     title: "Messebau",
-    img: "/productsImage/messebau.png",
+    img: "/productsImage/messebau.webp",
     description: "Messestände, Roll-Ups, Display-Systeme",
     path: "/messebau",
-    detailImages: [
-      "/productDetailImage/messebau.png",
-
-    ],
+    detailImages: ["/productDetailImage/messebau.webp"],
     detailDescription: [
       "Roll-Ups",
       "Display-Systeme",
