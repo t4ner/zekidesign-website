@@ -4,7 +4,7 @@ import products from "../data";
 
 const Products = () => {
   return (
-    <div className="relative flex flex-col items-center w-full min-h-screen px-4 md:px-8">
+    <div className="relative flex flex-col items-center w-full min-h-screen px-4 mb-24 md:mb-44 md:px-8">
       <div className="flex flex-col items-center justify-center mt-16 space-y-3 md:mt-32 ">
         <h1 className="md:text-3xl text-xl text-center font-bold text-[#E40128]">
           PRINT- UND WERBETECHNIK: KREATIV SEIT 2002
@@ -29,7 +29,7 @@ const Products = () => {
               <p className="mt-5 text-base font-semibold text-center md:text-lg">
                 {p.title}
               </p>
-              <div className="mt-1 space-y-1 font-medium text-center text-gray-500">
+              <div className="mt-1 space-y-1 font-medium text-center text-zinc-500">
                 {p.description.split(",").map((desc, index) => (
                   <p key={index} className="text-sm md:text-base">
                     {desc.trim()}

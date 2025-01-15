@@ -4,7 +4,7 @@ import Logo from "/logo/logo2.png"; // Logo'yu assets klasörüne eklemelisiniz
 
 const Footer = () => {
   return (
-    <footer className="py-8 mt-32 mb-5 border-t border-[#06234B] mx-4 md:mx-10">
+    <footer className="py-8 mb-5 border-t border-[#06234B] mx-4 md:mx-10">
       <div className="container px-4 mx-auto">
         {/* Contact Buttons */}
         <div className="flex flex-col justify-center gap-6 mb-8 md:mb-16 md:flex-row md:gap-16">
@@ -74,7 +74,7 @@ const Footer = () => {
 
         {/* Contact Title */}
         <div className="text-center md:mb-10">
-          <h3 className="text-sm font-medium text-gray-600 md:text-base">
+          <h3 className="text-sm font-medium text-gray-400 md:text-gray-600 md:text-base">
             Haben Sie Fragen, benötigen Beratung oder ein Angebot rund um
             Printmedien und Werbetechnik?
           </h3>

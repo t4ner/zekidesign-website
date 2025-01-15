@@ -82,7 +82,7 @@ const Navbar = () => {
                 {item.hasMegaMenu && (
                   <div
                     ref={megaMenuRef}
-                    className={`fixed top-0 left-0  w-full h-screen z-20 bg-white transform transition-transform duration-500 ease-in-out ${
+                    className={`fixed top-0 left-0  w-full h-screen z-[60] bg-white transform transition-transform duration-500 ease-in-out ${
                       showMegaMenu
                         ? "translate-y-20 pointer-events-auto"
                         : "-translate-y-full pointer-events-none"

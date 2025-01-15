@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import products from "../data";
+import { IoIosArrowBack } from "react-icons/io";
 
 const ProductDetail = () => {
   const { productId } = useParams();
@@ -15,29 +16,28 @@ const ProductDetail = () => {
   }
 
   return (
-    <div className="container px-4 mx-auto mt-8 sm:mt-12 md:mt-20">
+    <div className="container px-4 mx-auto mt-8 mb-20 md:mb-40 sm:mt-12 md:mt-20">
       <div className="flex flex-col items-start gap-6 md:gap-12 md:flex-row">
         {/* Left Side Navigation */}
         <div
-          className={`w-full md:w-1/4 ${
-            isNavOpen
-              ? "fixed inset-0 z-50 bg-white overflow-y-auto md:static md:block"
-              : "hidden md:block"
-          }`}
+          className={`fixed inset-y-0 left-0 w-full md:w-1/4 md:static md:block transform transition-transform duration-300 ease-in-out ${
+            isNavOpen ? "translate-x-0" : "-translate-x-full"
+          } md:translate-x-0 z-50 bg-white`}
         >
-          <nav className="p-4 bg-white shadow-lg  md:p-6 rounded-2xl">
+          <nav className="h-full p-4 bg-white shadow-lg md:h-auto md:p-6 rounded-2xl">
             {/* Close button for mobile */}
             <button
-              className="mb-4 p-2 text-[#E40128] md:hidden w-full text-left"
+              className="flex text-sm md:text-base font-medium items-center w-full p-2 mb-4 text-[#E40128] md:hidden"
               onClick={() => setIsNavOpen(false)}
             >
-              ← Close Menu
+         <IoIosArrowBack className="mr-2" />
+              Zurück
             </button>
             {products.map((p) => (
               <a
                 key={p.id}
                 href={`/${p.title.toLowerCase().replace(/\s+/g, "-")}`}
-                className={`flex items-center gap-3 p-2 sm:p-3 rounded-xl transition-all duration-300 mb-2 last:mb-0
+                className={`flex items-center gap-3 p-2 md:p-3 rounded-xl transition-all duration-300 mb-2 last:mb-0
                   ${
                     p.id === product.id
                       ? "text-[#E40128] font-semibold"
@@ -45,7 +45,7 @@ const ProductDetail = () => {
                   }`}
                 onClick={() => setIsNavOpen(false)}
               >
-                <span className="text-sm font-medium sm:text-base">
+                <span className="text-sm font-medium md:text-base">
                   {p.title}
                 </span>
               </a>
@@ -53,18 +53,26 @@ const ProductDetail = () => {
           </nav>
         </div>
 
+        {/* Overlay for mobile menu */}
+        {isNavOpen && (
+          <div
+            className="fixed inset-0 z-40 bg-black bg-opacity-50 md:hidden"
+            onClick={() => setIsNavOpen(false)}
+          />
+        )}
+
         {/* Button to toggle navigation on mobile */}
         <button
-          className="fixed bottom-4 right-4 z-10 md:hidden px-4 py-2 bg-[#E40128] text-white rounded-lg shadow-lg"
+          className="fixed bottom-4 text-sm md:text-base right-4 z-10 md:hidden px-4 py-2 bg-[#E40128] text-white rounded-lg shadow-lg"
           onClick={() => setIsNavOpen(!isNavOpen)}
         >
-          {isNavOpen ? "Close Menu" : "Open Menu"}
+          {isNavOpen ? "Menu" : "Menu"}
         </button>
 
         {/* Main Content */}
         <div className="w-full p-4 bg-white shadow-lg sm:p-6 md:p-8 md:w-3/4 rounded-2xl">
           {/* Header Section */}
-          <div className="flex flex-col gap-4 pb-6 border-b border-gray-100 sm:gap-6 sm:pb-8">
+          <div className="flex flex-col gap-4 pb-6 border-b border-gray-100 md:gap-6 sm:pb-8">
             {/* Title and Logo Section */}
             <div className="flex flex-col items-center gap-4 md:items-start md:flex-row md:gap-6">
               <div className="shrink-0">
@@ -75,15 +83,15 @@ const ProductDetail = () => {
                 />
               </div>
               <div className="w-full">
-                <h1 className="text-xl font-semibold text-center text-[#06234B] sm:text-2xl md:text-left mb-4">
-                  {product.title}
-                </h1>
                 <div className="flex flex-col md:flex-row md:flex-wrap md:gap-3">
                   {product.detailDescription.map((item, index) => (
-                    <div key={index} className="relative w-full mb-2 md:w-auto group md:mb-0">
+                    <div
+                      key={index}
+                      className="relative w-full mb-2 md:w-auto group md:mb-0"
+                    >
                       <div className="absolute -inset-[3px] bg-gradient-to-r from-gray-100 via-gray-200 to-gray-100 rounded-xl blur-md opacity-75 transition-all duration-500" />
                       <div className="relative px-3 py-2 transition-all duration-300 bg-white rounded-lg shadow-md sm:px-5 sm:py-3 group-hover:shadow-lg">
-                        <span className="font-medium text-[#06234B] text-sm sm:text-base">
+                        <span className="font-medium text-[#06234B] text-sm md:text-base">
                           {item}
                         </span>
                       </div>
