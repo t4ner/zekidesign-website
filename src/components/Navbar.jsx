@@ -136,7 +136,7 @@ const Navbar = () => {
           <div className="lg:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-white hover:text-[#E40128]"
+              className="text-[#E40128] "
             >
               {isOpen ? (
                 <IoClose size={1} color="black" />
@@ -161,7 +161,7 @@ const Navbar = () => {
                 onClick={() => setIsOpen(false)}
                 className="text-white hover:text-[#E40128] p-2"
               >
-                <IoClose size={28} color="black" />
+                <IoClose size={26} color="#E40128" />
               </button>
             </div>
 
@@ -181,13 +181,13 @@ const Navbar = () => {
                       }}
                     >
                       {item.hasMegaMenu ? (
-                        <span className="hover:text-[#E40128] font-medium transition-colors duration-200">
+                        <span className="hover:text-[#E40128] text-sm font-medium transition-colors duration-200">
                           {item.title}
                         </span>
                       ) : (
                         <Link
                           to={item.link}
-                          className="hover:text-[#E40128] font-medium transition-colors duration-200"
+                          className="hover:text-[#E40128] text-sm font-medium transition-colors duration-200"
                           onClick={() => setIsOpen(false)}
                         >
                           {item.title}
@@ -218,14 +218,14 @@ const Navbar = () => {
                               className="flex items-center gap-4 cursor-pointer text-black hover:text-[#E40128] transition-colors duration-200"
                               onClick={() => setIsOpen(false)}
                             >
-                              <div className="w-10 h-10 bg-[#E40128] rounded-lg flex items-center justify-center">
+                              <div className="w-9 h-9 bg-[#E40128] rounded-lg flex items-center justify-center">
                                 <img
                                   src={product.img}
                                   alt={product.title}
                                   className="object-contain w-7 h-7"
                                 />
                               </div>
-                              <span className="text-base font-medium">
+                              <span className="text-sm font-medium">
                                 {product.title}
                               </span>
                             </Link>
