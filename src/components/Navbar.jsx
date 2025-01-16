@@ -115,7 +115,7 @@ const Navbar = () => {
                   </span>
                 ) : (
                   <Link
-                    to={`/dienstleistungen/${item.link}`}
+                    to={`${item.link}`}
                     className="text-[#06234B] hover:text-[#E40128] py-10 font-semibold transition-colors duration-200"
                   >
                     {item.title}
@@ -188,7 +188,7 @@ const Navbar = () => {
                         </span>
                       ) : (
                         <Link
-                        to={`/dienstleistungen/${item.link}`}
+                        to={`${item.link}`}
                           className="hover:text-[#E40128] text-sm font-medium transition-colors duration-200"
                           onClick={() => setIsOpen(false)}
                         >
