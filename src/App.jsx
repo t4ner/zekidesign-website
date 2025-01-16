@@ -13,17 +13,18 @@ const Agb = lazy(() => import("./pages/Agb"));
 function App() {
   return (
     <BrowserRouter>
-     
+      <Suspense fallback={<div className="loading" />}>
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/:productId" element={<ProductDetail />} />
+          <Route path="/:productId/*" element={<ProductDetail />} />
           <Route path="/kontakt" element={<Contact />} />
           <Route path="/impressum" element={<Impressum />} />
           <Route path="/datenschutzerklarung" element={<Datenschut />} />
           <Route path="/agb" element={<Agb />} />
         </Routes>
         <Footer />
+      </Suspense>
     </BrowserRouter>
   );
 }

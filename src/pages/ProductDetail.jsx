@@ -83,12 +83,17 @@ const ProductDetail = () => {
                 <li key={p.id}>
                   <a
                     href={`/${p.title.toLowerCase().replace(/\s+/g, "-")}`}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      window.history.pushState({}, '', `/${p.title.toLowerCase().replace(/\s+/g, "-")}`);
+                      setIsNavOpen(false);
+                      window.location.reload();
+                    }}
                     className={`flex items-center gap-3 p-2 md:p-3 rounded-xl transition-all duration-300 ${
                       p.id === product.id
                         ? "text-[#E40128] font-semibold"
                         : "hover:bg-gray-100 text-[#06234B]"
                     }`}
-                    onClick={() => setIsNavOpen(false)}
                     aria-current={p.id === product.id ? "page" : undefined}
                   >
                     <span className="text-sm font-medium md:text-base">
