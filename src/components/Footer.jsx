@@ -83,11 +83,11 @@ const Footer = () => {
 
         {/* Contact Title */}
         <div className="text-center md:mb-10">
-          <h3 className="text-sm font-medium text-zinc-400 md:text-base">
+          <h3 className="text-sm md:font-medium text-zinc-400 md:text-base">
             Haben Sie Fragen, benötigen Beratung oder ein Angebot rund um
             Printmedien und Werbetechnik?
           </h3>
-          <h2 className="text-lg md:text-3xl font-bold text-[#06234B] mt-2">
+          <h2 className="text-lg md:text-3xl font-semibold md:font-bold text-[#06234B] mt-2">
             KONTAKTIEREN SIE UNS – WIR SIND GERNE FÜR SIE DA!
           </h2>
         </div>
