@@ -69,12 +69,12 @@ const ProductDetail = () => {
         >
           <nav
             className="h-full p-4 bg-white shadow-lg md:h-auto md:p-6 rounded-2xl"
-            aria-label="Ürün navigasyonu"
+            aria-label="Menu"
           >
             <button
               className="flex text-sm md:text-base font-medium items-center w-full p-2 mb-4 text-[#E40128] md:hidden"
               onClick={() => setIsNavOpen(false)}
-              aria-label="Navigasyonu kapat"
+              aria-label="Zurück"
             >
               <IoIosArrowBack aria-hidden="true" className="mr-2" />
               <span>Zurück</span>

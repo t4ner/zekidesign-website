@@ -13,36 +13,6 @@ import logo from "/logo/logo.webp";
 import { IoMenu, IoClose } from "react-icons/io5";
 import products from "../data.js";
 
-// MenuLink bileşenini ayırıyoruz
-const MenuLink = memo(({ to, children, onClick }) => (
-  <Link
-    to={to}
-    className="text-sm font-medium text-[#06234B] hover:text-[#E40128] transition-colors duration-200"
-    onClick={onClick}
-    role="menuitem"
-  >
-    {children}
-  </Link>
-));
-
-// ProductLink bileşenini ayırıyoruz
-const ProductLink = memo(({ product, onClick }) => (
-  <Link
-    to={`/${product.title.toLowerCase().replace(/\s+/g, "-")}`}
-    className="flex items-center gap-4 cursor-pointer text-black hover:text-[#E40128] transition-colors duration-200"
-    onClick={onClick}
-  >
-    <div className="w-9 h-9 bg-[#E40128] rounded-lg flex items-center justify-center">
-      <img
-        src={product.img}
-        alt={product.title}
-        className="object-contain w-7 h-7"
-        loading="lazy"
-      />
-    </div>
-    <span className="text-sm font-medium">{product.title}</span>
-  </Link>
-));
 
 // Mega menu için lazy loading
 const MegaMenu = lazy(() => import("./MegaMenu"));
@@ -145,7 +115,7 @@ const Navbar = () => {
                   </span>
                 ) : (
                   <Link
-                    to={item.link}
+                    to={`/dienstleistungen/${item.link}`}
                     className="text-[#06234B] hover:text-[#E40128] py-10 font-semibold transition-colors duration-200"
                   >
                     {item.title}
@@ -218,7 +188,7 @@ const Navbar = () => {
                         </span>
                       ) : (
                         <Link
-                          to={item.link}
+                        to={`/dienstleistungen/${item.link}`}
                           className="hover:text-[#E40128] text-sm font-medium transition-colors duration-200"
                           onClick={() => setIsOpen(false)}
                         >
@@ -244,7 +214,8 @@ const Navbar = () => {
                           {products.map((product, idx) => (
                             <Link
                               key={idx}
-                              to={`/${product.title
+                             
+                              to={`/dienstleistungen/${product.title
                                 .toLowerCase()
                                 .replace(/\s+/g, "-")}`}
                               className="flex items-center gap-4 cursor-pointer text-black hover:text-[#E40128] transition-colors duration-200"
