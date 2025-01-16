@@ -46,10 +46,6 @@ const ProductDetail = () => {
   const [selectedImage, setSelectedImage] = useState(0);
   const [isNavOpen, setIsNavOpen] = useState(false);
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
   const navigate = useNavigate();
 
   if (!product) {
