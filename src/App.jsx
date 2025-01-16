@@ -17,7 +17,10 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/:productId/*" element={<ProductDetail />} />
+          <Route
+            path="/dienstleistungen/:productId"
+            element={<ProductDetail />}
+          />
           <Route path="/kontakt" element={<Contact />} />
           <Route path="/impressum" element={<Impressum />} />
           <Route path="/datenschutzerklarung" element={<Datenschut />} />

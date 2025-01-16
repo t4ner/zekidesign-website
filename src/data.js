@@ -4,11 +4,8 @@ const products = [
     title: "Grafikdesign",
     img: "/productsImage/design.webp",
     description: "Logo Design, Corporate Design, Geschäftsausstattung",
-    path: "/grafikdesign",
-    detailImages: [
-      "/productDetailImage/grafikdesign.webp",
-     
-    ],
+    path: "/dienstleistungen/grafikdesign",
+    detailImages: ["/productDetailImage/grafikdesign.webp"],
     detailDescription: [
       "Logo Design",
       "Corporate Design",
@@ -26,10 +23,8 @@ const products = [
     title: "Printmedien",
     img: "/productsImage/print.webp",
     description: "Flyer, Visitenkarten, Briefpapier",
-    path: "/printmedien",
-    detailImages: [
-      "/productDetailImage/printmedien.webp",
-    ],
+    path: "/dienstleistungen/printmedien",
+    detailImages: ["/productDetailImage/printmedien.webp"],
     detailDescription: [
       "Flyer",
       "Visitenkarten",
@@ -50,11 +45,8 @@ const products = [
     title: "Banner & Planen",
     img: "/productsImage/banner.webp",
     description: "Werbebanner, Mesh-Banner, PVC-Banner",
-    path: "/banner-&-planen",
-    detailImages: [
-      "/productDetailImage/bannerplanen.webp",
-      
-    ],
+    path: "/dienstleistungen/banner-&-planen",
+    detailImages: ["/productDetailImage/bannerplanen.webp"],
     detailDescription: [
       "PVC-Planen",
       "Werbeplanen",
@@ -73,10 +65,8 @@ const products = [
     title: "Schilder",
     img: "/productsImage/schilder.webp",
     description: "Werbeschilder, Firmenschilder, Leuchtwerbung",
-    path: "/schilder",
-    detailImages: [
-      "/productDetailImage/schilder.webp",
-    ],
+    path: "/dienstleistungen/schilder",
+    detailImages: ["/productDetailImage/schilder.webp"],
     detailDescription: [
       "Firmenschilder",
       "Bauschilder",
@@ -94,11 +84,8 @@ const products = [
     title: "Fensterwerbung",
     img: "/productsImage/fenster.webp",
     description: "Schaufensterbeschriftung, Glasdekor",
-    path: "/fensterwerbung",
-    detailImages: [
-      "/productDetailImage/fenster.webp",
-
-    ],
+    path: "/dienstleistungen/fensterwerbung",
+    detailImages: ["/productDetailImage/fenster.webp"],
     detailDescription: [
       "Fensterbeschriftung",
       "Fassadenbeschriftung",
@@ -114,10 +101,8 @@ const products = [
     title: "KFZ-Werbung",
     img: "/productsImage/kfz.webp",
     description: "Fahrzeugbeschriftung, KFZ-Folierung",
-    path: "/kfz-werbung",
-    detailImages: [
-      "/productDetailImage/kfz.webp",
-    ],
+    path: "/dienstleistungen/kfz-werbung",
+    detailImages: ["/productDetailImage/kfz.webp"],
     detailDescription: [
       "Transporter-Beschriftung",
       "PKW-Beschriftung",
@@ -135,10 +120,8 @@ const products = [
     img: "/productsImage/led.webp",
     description:
       "3D-Buchstaben, Leuchkasten, Neon Schriftzug, LED-Textilspannrahmen",
-    path: "/led-werbung",
-    detailImages: [
-      "/productDetailImage/led.webp",
-    ],
+    path: "/dienstleistungen/led-werbung",
+    detailImages: ["/productDetailImage/led.webp"],
     detailDescription: [
       "3D-Buchstaben",
       "Leuchtkasten",
@@ -156,11 +139,8 @@ const products = [
     title: "Textildruck",
     img: "/productsImage/textilien.webp",
     description: "T-Shirts, Poloshirts, Arbeitsbekleidung",
-    path: "/textildruck",
-    detailImages: [
-      "/productDetailImage/textildruck.webp",
-
-    ],
+    path: "/dienstleistungen/textildruck",
+    detailImages: ["/productDetailImage/textildruck.webp"],
     detailDescription: [
       "T-Shirts",
       "Poloshirts",
@@ -180,10 +160,8 @@ const products = [
     title: "Werbeartikel",
     img: "/productsImage/werbeartikel.webp",
     description: "Kugelschreiber, USB-Sticks, Tassen",
-    path: "/werbeartikel",
-    detailImages: [
-      "/productDetailImage/webartikel.webp",
-    ],
+    path: "/dienstleistungen/werbeartikel",
+    detailImages: ["/productDetailImage/webartikel.webp"],
     detailDescription: [
       "Kugelschreiber",
       "Tassen & Gläser",
@@ -203,11 +181,8 @@ const products = [
     title: "Messebau",
     img: "/productsImage/messebau.webp",
     description: "Messestände, Roll-Ups, Display-Systeme",
-    path: "/messebau",
-    detailImages: [
-      "/productDetailImage/messebau.webp",
-
-    ],
+    path: "/dienstleistungen/messebau",
+    detailImages: ["/productDetailImage/messebau.webp"],
     detailDescription: [
       "Roll-Ups",
       "Display-Systeme",

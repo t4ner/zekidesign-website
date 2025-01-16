@@ -23,7 +23,9 @@ const MegaMenu = forwardRef(({ products, onClose, showMegaMenu }, ref) => {
           {products.map((product, idx) => (
             <Link
               key={idx}
-              to={`/${product.title.toLowerCase().replace(/\s+/g, "-")}`}
+              to={`/dienstleistungen/${product.title
+                .toLowerCase()
+                .replace(/\s+/g, "-")}`}
               className="text-center transition-all duration-300 ease-in cursor-pointer hover:scale-110"
               onClick={onClose}
               style={{

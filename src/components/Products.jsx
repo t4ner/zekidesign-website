@@ -5,7 +5,9 @@ import products from "../data";
 const ProductCard = memo(
   ({ product }) => (
     <Link
-      to={product.path}
+      to={`/dienstleistungen/${product.title
+        .toLowerCase()
+        .replace(/\s+/g, "-")}`}
       className="flex flex-col items-center justify-center p-5 transition-transform bg-white shadow-xl rounded-xl bg-opacity-40 hover:scale-105"
       role="article"
       aria-labelledby={`product-title-${product.id}`}
