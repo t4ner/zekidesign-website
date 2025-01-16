@@ -13,7 +13,7 @@ const Agb = lazy(() => import("./pages/Agb"));
 function App() {
   return (
     <BrowserRouter>
-      <Suspense fallback={<div>Loading...</div>}>
+     
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
@@ -24,7 +24,6 @@ function App() {
           <Route path="/agb" element={<Agb />} />
         </Routes>
         <Footer />
-      </Suspense>
     </BrowserRouter>
   );
 }

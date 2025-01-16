@@ -47,6 +47,16 @@ const ProductLink = memo(({ product, onClick }) => (
 // Mega menu için lazy loading
 const MegaMenu = lazy(() => import("./MegaMenu"));
 
+const DropdownMenu = ({ isVisible, children }) => (
+  <div
+    className={`absolute left-0 top-full transition-all duration-300 ease-in-out ${
+      isVisible ? "max-h-40" : "max-h-0"
+    } overflow-hidden`}
+  >
+    {children}
+  </div>
+);
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [showMegaMenu, setShowMegaMenu] = useState(false);
@@ -125,13 +135,12 @@ const Navbar = () => {
             {menuItems.map((item, index) => (
               <div
                 key={index}
-                ref={item.hasMegaMenu ? menuItemRef : null}
                 className="relative group"
                 onMouseEnter={item.hasMegaMenu ? handleMouseEnter : undefined}
                 onMouseLeave={item.hasMegaMenu ? handleMouseLeave : undefined}
               >
                 {item.hasMegaMenu ? (
-                  <span className="text-[#06234B]  hover:text-[#E40128] py-10 font-semibold transition-colors duration-200 cursor-pointer">
+                  <span className="text-[#06234B] hover:text-[#E40128] py-10 font-semibold transition-colors duration-200 cursor-pointer">
                     {item.title}
                   </span>
                 ) : (
@@ -143,18 +152,20 @@ const Navbar = () => {
                   </Link>
                 )}
 
-                {/* Mega Menu */}
-                {item.hasMegaMenu && showMegaMenu && (
-                  <Suspense
-                    fallback={<div className="loading">Loading...</div>}
-                  >
-                    <MegaMenu
-                      products={products}
-                      onClose={() => setShowMegaMenu(false)}
-                      ref={megaMenuRef}
-                      showMegaMenu={showMegaMenu}
-                    />
-                  </Suspense>
+                {/* Dropdown Menu */}
+                {item.hasMegaMenu && (
+                  <DropdownMenu isVisible={showMegaMenu}>
+                    <Suspense
+                      fallback={<div className="loading">Loading...</div>}
+                    >
+                      <MegaMenu
+                        products={products}
+                        onClose={() => setShowMegaMenu(false)}
+                        ref={megaMenuRef}
+                        showMegaMenu={showMegaMenu}
+                      />
+                    </Suspense>
+                  </DropdownMenu>
                 )}
               </div>
             ))}

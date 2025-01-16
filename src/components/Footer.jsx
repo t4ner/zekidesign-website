@@ -25,6 +25,7 @@ const Footer = () => {
         <div className="flex flex-col justify-center gap-6 mb-8 md:mb-16 md:flex-row md:gap-16">
           <ContactButton
             href="tel:+4901733123222"
+            target="_blank"
             icon={
               <svg
                 className="w-6 h-6 text-white"
@@ -45,6 +46,7 @@ const Footer = () => {
 
           <ContactButton
             href="mailto:info@zekimedia.de"
+            target="_blank"
             icon={
               <svg
                 className="w-6 h-6 text-white"
@@ -65,6 +67,7 @@ const Footer = () => {
 
           <ContactButton
             href="https://wa.me/+4901733123222"
+            target="_blank"
             icon={
               <svg
                 className="w-6 h-6 text-white"
