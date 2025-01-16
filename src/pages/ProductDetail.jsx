@@ -82,7 +82,7 @@ const ProductDetail = () => {
               {products.map((p) => (
                 <li key={p.id}>
                   <Link
-                    href={`/${p.title.toLowerCase().replace(/\s+/g, "-")}`}
+                    to={`/${p.title.toLowerCase().replace(/\s+/g, "-")}`}
                     onClick={(e) => {
                       e.preventDefault();
                       window.history.pushState({}, '', `/${p.title.toLowerCase().replace(/\s+/g, "-")}`);
