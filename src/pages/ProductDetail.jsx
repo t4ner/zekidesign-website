@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useEffect, useRef } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import products from "../data";
 import { IoIosArrowBack } from "react-icons/io";
 
@@ -81,7 +81,7 @@ const ProductDetail = () => {
             <ul role="list" className="space-y-2">
               {products.map((p) => (
                 <li key={p.id}>
-                  <a
+                  <Link
                     href={`/${p.title.toLowerCase().replace(/\s+/g, "-")}`}
                     onClick={(e) => {
                       e.preventDefault();
@@ -99,7 +99,7 @@ const ProductDetail = () => {
                     <span className="text-sm font-medium md:text-base">
                       {p.title}
                     </span>
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
