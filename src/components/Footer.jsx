@@ -10,8 +10,8 @@ const FooterLink = memo(({ to, children }) => (
 
 const ContactButton = memo(({ href, icon, text, target }) => (
   <a href={href} className="flex items-center gap-4" target={target}>
-    <div className="p-2 bg-red-600 rounded-full">{icon}</div>
-    <span className="text-sm md:text-lg font-medium text-[#06234B]">
+    <div className="p-3 bg-red-600 rounded-full">{icon}</div>
+    <span className="text-sm md:text-lg font-medium text-[#06234B] hidden md:block">
       {text}
     </span>
   </a>
@@ -19,10 +19,10 @@ const ContactButton = memo(({ href, icon, text, target }) => (
 
 const Footer = () => {
   return (
-    <footer className="py-8 mb-5 border-t border-[#06234B] mx-4 md:mx-10">
+    <footer className="py-8 mb-5 border-t border-[#06234B]  md:mx-10">
       <div className="container px-4 mx-auto">
         {/* Contact Buttons */}
-        <div className="flex flex-col justify-center gap-6 mb-8 md:mb-16 md:flex-row md:gap-16">
+        <div className="flex justify-center gap-10 mb-8 md:mb-16 md:flex-row md:gap-16">
           <ContactButton
             href="tel:+4901733123222"
             target="_blank"
@@ -83,7 +83,7 @@ const Footer = () => {
 
         {/* Contact Title */}
         <div className="text-center md:mb-10">
-          <h3 className="text-sm font-medium text-gray-400 md:text-gray-600 md:text-base">
+          <h3 className="text-sm font-medium text-zinc-400 md:text-base">
             Haben Sie Fragen, benötigen Beratung oder ein Angebot rund um
             Printmedien und Werbetechnik?
           </h3>
@@ -93,11 +93,11 @@ const Footer = () => {
         </div>
 
         {/* Bottom Footer */}
-        <div className="flex flex-col items-start justify-between pt-8 md:flex-row">
-          <div className="mb-4 md:mb-0">
+        <div className="flex flex-col justify-between pt-8 md:items-center md:flex-row">
+          <div className="hidden mb-4 md:block md:mb-0">
             <img src={Logo} alt="Zekidesign Logo" className="h-10" />
           </div>
-          <div className="flex flex-col gap-6 text-sm font-medium md:flex-row text-zinc-500">
+          <div className="flex flex-col gap-6 text-sm md:flex-row text-zinc-400">
             <FooterLink to="/">Home</FooterLink>
             <FooterLink to="/kontakt">Kontakt</FooterLink>
             <FooterLink to="/impressum">Impressum</FooterLink>
@@ -105,6 +105,9 @@ const Footer = () => {
               Datenschutzerklärung
             </FooterLink>
             <FooterLink to="/agb">AGB</FooterLink>
+          </div>
+          <div className="block mt-10 md:hidden">
+            <img src={Logo} alt="Zekidesign Logo" className="h-10" />
           </div>
         </div>
       </div>
