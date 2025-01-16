@@ -82,17 +82,13 @@ const ProductDetail = () => {
               {products.map((p) => (
                 <li key={p.id}>
                   <Link
-                    to={`/dienstleistungen/${p.title
-                      .toLowerCase()
-                      .replace(/\s+/g, "-")}`}
+                    to={`/dienstleistungen/${p.title.toLowerCase().replace(/\s+/g, "-")}`}
                     onClick={(e) => {
                       e.preventDefault();
                       window.history.pushState(
                         {},
                         "",
-                        `/dienstleistungen/${p.title
-                          .toLowerCase()
-                          .replace(/\s+/g, "-")}`
+                        `/dienstleistungen/${p.title.toLowerCase().replace(/\s+/g, "-")}`
                       );
                       setIsNavOpen(false);
                       window.location.reload();
