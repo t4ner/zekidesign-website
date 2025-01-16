@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useEffect, useRef } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import products from "../data";
 import { IoIosArrowBack } from "react-icons/io";
 
@@ -50,6 +50,8 @@ const ProductDetail = () => {
     window.scrollTo(0, 0);
   }, []);
 
+  const navigate = useNavigate();
+
   if (!product) {
     return <div>Product not found</div>;
   }
@@ -85,17 +87,13 @@ const ProductDetail = () => {
                     to={`/dienstleistungen/${p.title
                       .toLowerCase()
                       .replace(/\s+/g, "-")}`}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      window.history.pushState(
-                        {},
-                        "",
+                    onClick={() => {
+                      setIsNavOpen(false);
+                      navigate(
                         `/dienstleistungen/${p.title
                           .toLowerCase()
                           .replace(/\s+/g, "-")}`
                       );
-                      setIsNavOpen(false);
-                      window.location.reload();
                     }}
                     className={`flex items-center gap-3 p-2 md:p-3 rounded-xl transition-all duration-300 ${
                       p.id === product.id
