@@ -3,7 +3,7 @@ const products = [
     id: 1,
     title: "Grafikdesign",
     img: "/productsImage/design.webp",
-    description: "Logo Design, Corporate Design, Geschäftsausstattung",
+    description: "Logo Design, Corporate Design, Printdesign",
     path: "/dienstleistungen/grafikdesign",
     detailImages: ["/productDetailImage/grafikdesign.webp"],
     detailDescription: [
@@ -44,7 +44,7 @@ const products = [
     id: 3,
     title: "Banner & Planen",
     img: "/productsImage/banner.webp",
-    description: "Werbebanner, Mesh-Banner, PVC-Banner",
+    description: "PVC-Banner, Gerüstbanner, Bauzaunbanner",
     path: "/dienstleistungen/banner-&-planen",
     detailImages: ["/productDetailImage/bannerplanen.webp"],
     detailDescription: [
@@ -64,7 +64,7 @@ const products = [
     id: 7,
     title: "Schilder",
     img: "/productsImage/schilder.webp",
-    description: "Werbeschilder, Firmenschilder, Leuchtwerbung",
+    description: "Firmenschilder, Bauschilder, Werbetafeln",
     path: "/dienstleistungen/schilder",
     detailImages: ["/productDetailImage/schilder.webp"],
     detailDescription: [
@@ -83,7 +83,8 @@ const products = [
     id: 5,
     title: "Fensterwerbung",
     img: "/productsImage/fenster.webp",
-    description: "Schaufensterbeschriftung, Glasdekor",
+    description:
+      "Fensterbeschriftung, Fassadenbeschriftung, Innenraumgestaltung",
     path: "/dienstleistungen/fensterwerbung",
     detailImages: ["/productDetailImage/fenster.webp"],
     detailDescription: [
@@ -100,7 +101,7 @@ const products = [
     id: 4,
     title: "KFZ-Werbung",
     img: "/productsImage/kfz.webp",
-    description: "Fahrzeugbeschriftung, KFZ-Folierung",
+    description: "PKW-Beschriftung, LKW-Beschriftung, Anhänger-Beschriftung",
     path: "/dienstleistungen/kfz-werbung",
     detailImages: ["/productDetailImage/kfz.webp"],
     detailDescription: [
@@ -118,8 +119,7 @@ const products = [
     id: 6,
     title: "LED-Werbung",
     img: "/productsImage/led.webp",
-    description:
-      "3D-Buchstaben, Leuchkasten, Neon Schriftzug, LED-Textilspannrahmen",
+    description: "3D-Buchstaben, Leuchkasten, Neon Schriftzug",
     path: "/dienstleistungen/led-werbung",
     detailImages: ["/productDetailImage/led.webp"],
     detailDescription: [
@@ -138,7 +138,7 @@ const products = [
     id: 8,
     title: "Textildruck",
     img: "/productsImage/textilien.webp",
-    description: "T-Shirts, Poloshirts, Arbeitsbekleidung",
+    description: "T-Shirts, Poloshirts, Warnwesten",
     path: "/dienstleistungen/textildruck",
     detailImages: ["/productDetailImage/textildruck.webp"],
     detailDescription: [
@@ -159,7 +159,7 @@ const products = [
     id: 9,
     title: "Werbeartikel",
     img: "/productsImage/werbeartikel.webp",
-    description: "Kugelschreiber, USB-Sticks, Tassen",
+    description: "Kugelschreiber, Tassen & Gläser, Schlüsselanhänger",
     path: "/dienstleistungen/werbeartikel",
     detailImages: ["/productDetailImage/webartikel.webp"],
     detailDescription: [
@@ -180,7 +180,7 @@ const products = [
     id: 10,
     title: "Messebau",
     img: "/productsImage/messebau.webp",
-    description: "Messestände, Roll-Ups, Display-Systeme",
+    description: "Roll-Ups, Display-Systeme, LED-Messestand",
     path: "/dienstleistungen/messebau",
     detailImages: ["/productDetailImage/messebau.webp"],
     detailDescription: [

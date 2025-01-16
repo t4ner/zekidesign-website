@@ -15,12 +15,15 @@ const Datenschut = () => {
         1. Datenschutz auf einen Blick
       </h2>
       <p className="text-xs text-zinc-500 md:text-base">
-        Allgemeine Hinweise: Diese Datenschutzerklärung gibt Ihnen einen
-        Überblick darüber, wie Ihre personenbezogenen Daten verarbeitet werden,
-        wenn Sie unsere Website besuchen. Personenbezogene Daten sind
-        Informationen, mit denen Sie direkt oder indirekt identifiziert werden
-        können. Detaillierte Informationen finden Sie in den Abschnitten dieser
-        Datenschutzerklärung.
+        <span className="font-medium text-[#06234B]">
+          {" "}
+          Allgemeine Hinweise:{" "}
+        </span>{" "} <br />
+        Diese Datenschutzerklärung gibt Ihnen einen Überblick darüber, wie Ihre
+        personenbezogenen Daten verarbeitet werden, wenn Sie unsere Website
+        besuchen. Personenbezogene Daten sind Informationen, mit denen Sie
+        direkt oder indirekt identifiziert werden können. Detaillierte
+        Informationen finden Sie in den Abschnitten dieser Datenschutzerklärung.
       </p>
 
       <h2 className="mt-6 text-base md:text-xl font-semibold text-[#06234B]">
