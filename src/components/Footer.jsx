@@ -45,7 +45,7 @@ const Footer = () => {
           />
 
           <ContactButton
-            href="mailto:info@zekimedia.de"
+            href="mailto:info@macaree.de"
             target="_blank"
             icon={
               <svg
@@ -95,7 +95,7 @@ const Footer = () => {
         {/* Bottom Footer */}
         <div className="flex flex-col justify-between pt-8 md:items-center md:flex-row">
           <div className="hidden mb-4 md:block md:mb-0">
-            <img src={Logo} alt="Zekidesign Logo" className="h-10" />
+            <img src={Logo} alt="macaree Logo" className="h-16" />
           </div>
           <div className="flex flex-col gap-6 text-sm md:flex-row text-zinc-400">
             <FooterLink to="/">Home</FooterLink>
@@ -107,7 +107,7 @@ const Footer = () => {
             <FooterLink to="/agb">AGB</FooterLink>
           </div>
           <div className="block mt-10 md:hidden">
-            <img src={Logo} alt="Zekidesign Logo" className="h-10" />
+            <img src={Logo} alt="macaree Logo" className="h-12" />
           </div>
         </div>
       </div>

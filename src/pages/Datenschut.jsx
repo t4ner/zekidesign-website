@@ -18,7 +18,8 @@ const Datenschut = () => {
         <span className="font-medium text-[#06234B]">
           {" "}
           Allgemeine Hinweise:{" "}
-        </span>{" "} <br />
+        </span>{" "}
+        <br />
         Diese Datenschutzerklärung gibt Ihnen einen Überblick darüber, wie Ihre
         personenbezogenen Daten verarbeitet werden, wenn Sie unsere Website
         besuchen. Personenbezogene Daten sind Informationen, mit denen Sie
@@ -96,7 +97,7 @@ const Datenschut = () => {
         Verantwortliche Stelle
       </h2>
       <div className="text-xs text-zinc-500 md:text-base">
-        Verantwortlich für die Datenverarbeitung ist: ZekiMedia Print &
+        Verantwortlich für die Datenverarbeitung ist: Macareé Print &
         Werbetechnik
         <br />
         Inhaber: Zeki Aktas
@@ -107,10 +108,10 @@ const Datenschut = () => {
         <br />
         E-Mail:{" "}
         <a
-          href="mailto:info@zekimedia.de"
+          href="mailto:info@macaree.de"
           className="text-xs text-blue-500 md:text-base"
         >
-          info@zekimedia.de
+          info@macaree.de
         </a>
       </div>
 

@@ -92,12 +92,12 @@ const Navbar = () => {
   );
 
   return (
-    <nav className="z-50">
+    <nav className="z-50 mt-3">
       <div className="container px-4 mx-auto">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center">
-            <img src={logo} alt="Logo" className="w-40 lg:w-72" />
+            <img src={logo} alt="Logo" className="w-32 lg:w-52" />
           </Link>
 
           {/* Desktop Menu */}
@@ -164,7 +164,7 @@ const Navbar = () => {
           <div className="flex flex-col h-full">
             {/* Logo ve Kapatma Butonu */}
             <div className="flex items-center justify-between p-6 border-b border-gray-800">
-              <img src={logo} alt="Logo" className="w-40" />
+              <img src={logo} alt="Logo" className="w-32" />
               <button
                 onClick={() => setIsOpen(false)}
                 className="text-white hover:text-[#E40128] p-2"

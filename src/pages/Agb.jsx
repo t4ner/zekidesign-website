@@ -16,13 +16,13 @@ const Agb = () => {
       </h2>
       <p className="text-xs text-zinc-500 md:text-base">
         1.1. Diese Allgemeinen Geschäftsbedingungen (AGB) gelten für alle
-        Verträge, Lieferungen und Leistungen zwischen ZekiMedia Print &
-        Werbetechnik (im Folgenden „ZekiMedia“) und ihren Kunden, sofern nicht
+        Verträge, Lieferungen und Leistungen zwischen Macareé Print &
+        Werbetechnik (im Folgenden „Macareé“) und ihren Kunden, sofern nicht
         ausdrücklich schriftlich etwas anderes vereinbart wurde.
       </p>
       <p className="text-xs text-zinc-500 md:text-base">
         1.2. Abweichende Geschäftsbedingungen des Kunden werden nur dann
-        Bestandteil des Vertrages, wenn ZekiMedia deren Geltung ausdrücklich
+        Bestandteil des Vertrages, wenn Macareé deren Geltung ausdrücklich
         schriftlich zustimmt.
       </p>
 
@@ -31,10 +31,10 @@ const Agb = () => {
       </h2>
       <p className="text-xs text-zinc-500 md:text-base">
         2.1. Ein Vertrag kommt zustande, sobald der Kunde ein Angebot von
-        ZekiMedia schriftlich oder elektronisch annimmt.
+        Macareé schriftlich oder elektronisch annimmt.
       </p>
       <p className="text-xs text-zinc-500 md:text-base">
-        2.2. Angebote von ZekiMedia sind freibleibend und unverbindlich, sofern
+        2.2. Angebote von Macareé sind freibleibend und unverbindlich, sofern
         nicht ausdrücklich schriftlich anders angegeben.
       </p>
 
@@ -52,7 +52,7 @@ const Agb = () => {
         vereinbart wurde.
       </p>
       <p className="text-xs text-zinc-500 md:text-base">
-        3.3. Bei Zahlungsverzug ist ZekiMedia berechtigt, Verzugszinsen in Höhe
+        3.3. Bei Zahlungsverzug ist Macareé berechtigt, Verzugszinsen in Höhe
         von 5 % über dem jeweiligen Basiszinssatz gemäß § 288 BGB zu berechnen.
         Weitergehende Schadensersatzansprüche bleiben unberührt.
       </p>
@@ -70,7 +70,7 @@ const Agb = () => {
         innerhalb von 7 Tagen schriftlich mitzuteilen.
       </p>
       <p className="text-xs text-zinc-500 md:text-base">
-        4.3. Im Falle eines Annahmeverzugs des Kunden ist ZekiMedia berechtigt,
+        4.3. Im Falle eines Annahmeverzugs des Kunden ist Macareé berechtigt,
         die Produkte auf Kosten des Kunden einzulagern und eine angemessene
         Lagergebühr zu berechnen.
       </p>
@@ -84,14 +84,14 @@ const Agb = () => {
         genehmigt.
       </p>
       <p className="text-xs text-zinc-500 md:text-base">
-        5.2. ZekiMedia haftet ausschließlich für Vorsatz und grobe
-        Fahrlässigkeit. Eine Haftung für leichte Fahrlässigkeit ist
-        ausgeschlossen, es sei denn, es handelt sich um die Verletzung
-        wesentlicher Vertragspflichten (Kardinalpflichten).
+        5.2. Macareé haftet ausschließlich für Vorsatz und grobe Fahrlässigkeit.
+        Eine Haftung für leichte Fahrlässigkeit ist ausgeschlossen, es sei denn,
+        es handelt sich um die Verletzung wesentlicher Vertragspflichten
+        (Kardinalpflichten).
       </p>
       <p className="text-xs text-zinc-500 md:text-base">
         5.3. Für Schäden, die durch unsachgemäße Nutzung oder Behandlung der
-        Produkte entstehen, übernimmt ZekiMedia keine Haftung.
+        Produkte entstehen, übernimmt Macareé keine Haftung.
       </p>
 
       <h2 className="mt-6 text-base md:text-xl font-semibold text-[#06234B] mb-2">
@@ -99,7 +99,7 @@ const Agb = () => {
       </h2>
       <p className="text-xs text-zinc-500 md:text-base">
         6.1. Die gelieferten Produkte bleiben bis zur vollständigen Zahlung des
-        Kaufpreises Eigentum von ZekiMedia.
+        Kaufpreises Eigentum von Macareé.
       </p>
       <p className="text-xs text-zinc-500 md:text-base">
         6.2. Der Kunde verpflichtet sich, die Produkte während des
@@ -111,14 +111,14 @@ const Agb = () => {
         7. Prüfungspflicht des Kunden
       </h2>
       <p className="text-xs text-zinc-500 md:text-base">
-        7.1. Der Kunde ist verpflichtet, alle von ZekiMedia bereitgestellten
+        7.1. Der Kunde ist verpflichtet, alle von Macareé bereitgestellten
         Inhalte (z. B. Texte, Grafiken, Designs) vor der Freigabe sorgfältig zu
         prüfen.
       </p>
       <p className="text-xs text-zinc-500 md:text-base">
         7.2. Mit der Freigabe bestätigt der Kunde die Richtigkeit der Inhalte
         und übernimmt die Verantwortung für etwaige Fehler. Nach der Freigabe
-        übernimmt ZekiMedia keine Haftung für Rechtschreib-, inhaltliche oder
+        übernimmt Macareé keine Haftung für Rechtschreib-, inhaltliche oder
         sonstige Fehler.
       </p>
 
@@ -126,12 +126,11 @@ const Agb = () => {
         8. Urheberrechte und Nutzungsrechte
       </h2>
       <p className="text-xs text-zinc-500 md:text-base">
-        8.1. Alle von ZekiMedia erstellten Entwürfe, Designs und Produkte
-        unterliegen dem Urheberrecht und bleiben geistiges Eigentum von
-        ZekiMedia.
+        8.1. Alle von Macareé erstellten Entwürfe, Designs und Produkte
+        unterliegen dem Urheberrecht und bleiben geistiges Eigentum von Macareé.
       </p>
       <p className="text-xs text-zinc-500 md:text-base">
-        8.2. Ohne vorherige schriftliche Zustimmung von ZekiMedia dürfen diese
+        8.2. Ohne vorherige schriftliche Zustimmung von Macareé dürfen diese
         Werke weder vervielfältigt, verändert, veröffentlicht noch an Dritte
         weitergegeben werden.
       </p>
@@ -150,7 +149,7 @@ const Agb = () => {
         Widerrufsrecht nach den gesetzlichen Bestimmungen zu.
       </p>
       <p className="text-xs text-zinc-500 md:text-base">
-        9.2. Das Widerrufsrecht erlischt vorzeitig, wenn ZekiMedia mit
+        9.2. Das Widerrufsrecht erlischt vorzeitig, wenn Macareé mit
         ausdrücklicher Zustimmung des Kunden vor Ablauf der Widerrufsfrist mit
         der Ausführung der Leistung begonnen hat.
       </p>
@@ -159,12 +158,12 @@ const Agb = () => {
         10. Datenschutz
       </h2>
       <p className="text-xs text-zinc-500 md:text-base">
-        10.1. ZekiMedia verpflichtet sich, sämtliche personenbezogenen Daten
-        gemäß den geltenden Datenschutzvorschriften vertraulich zu behandeln.
+        10.1. Macareé verpflichtet sich, sämtliche personenbezogenen Daten gemäß
+        den geltenden Datenschutzvorschriften vertraulich zu behandeln.
       </p>
       <p className="text-xs text-zinc-500 md:text-base">
         10.2. Weitere Informationen zum Datenschutz können der
-        Datenschutzerklärung von ZekiMedia entnommen werden.
+        Datenschutzerklärung von Macareé entnommen werden.
       </p>
 
       <h2 className="mt-6 text-base md:text-xl font-semibold text-[#06234B] mb-2">
@@ -172,8 +171,8 @@ const Agb = () => {
       </h2>
       <p className="text-xs text-zinc-500 md:text-base">
         11.1. Gerichtsstand für alle Streitigkeiten aus diesem
-        Vertragsverhältnis ist der Sitz von ZekiMedia, sofern der Kunde
-        Kaufmann, eine juristische Person des öffentlichen Rechts oder ein
+        Vertragsverhältnis ist der Sitz von Macareé, sofern der Kunde Kaufmann,
+        eine juristische Person des öffentlichen Rechts oder ein
         öffentlich-rechtliches Sondervermögen ist.
       </p>
       <p className="text-xs text-zinc-500 md:text-base">
