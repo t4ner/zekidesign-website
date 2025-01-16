@@ -6,6 +6,10 @@ export default defineConfig({
   plugins: [react()],
   base: '/',
   server: {
-    historyApiFallback: true
-  },
+    host: true,
+    port: 8006,
+     watch: {
+       usePolling: true
+     }
+  }
 });
