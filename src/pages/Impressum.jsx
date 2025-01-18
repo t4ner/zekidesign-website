@@ -22,7 +22,8 @@ const Impressum = () => {
       <p className="text-xs text-zinc-500 md:text-base ">
         E-Mail:{" "}
         <a
-          href="mailto:info@Macareé.de"
+          href="mailto:info@macaree.de"
+          target="_blank"
           className="text-xs hover:underline text-zinc-500 md:text-base"
         >
           info@macaree.de

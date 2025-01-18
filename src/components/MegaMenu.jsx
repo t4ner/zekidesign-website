@@ -29,7 +29,7 @@ const MegaMenu = forwardRef(({ products, onClose, showMegaMenu }, ref) => {
               className="text-center transition-all duration-300 ease-in cursor-pointer hover:scale-110"
               onClick={onClose}
               style={{
-                transitionDelay: showMegaMenu ? `${idx * 100}ms` : "0ms",
+                transitionDelay: showMegaMenu ? "200ms" : "0ms",
                 transitionProperty: showMegaMenu ? "all" : "transform",
               }}
             >
